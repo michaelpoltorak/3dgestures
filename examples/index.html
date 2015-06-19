@@ -4,6 +4,7 @@
 <head>
 
     <title>3dgestures examples</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
     <meta name="description" content="">
@@ -11,9 +12,20 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
 
     <script type="text/javascript" src="../src/filters/filters.js"></script>
+    <script type="text/javascript" src="../src/device.js"></script>
+    <script type="text/javascript">
+
+        var device = new Device();
+        document.addEventListener("GOT_GESTURE", function (e) {
+            document.getElementById("currentGesture").innerHTML = e.detail;
+        });
+        device.start();
+
+    </script>
 </head>
 
 <body>
+    <div id="currentGesture"></div>
 </body>
 
 </html>
